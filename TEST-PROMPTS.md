@@ -97,7 +97,7 @@ Read all instruction files available to you. Then report:
 4. All files visible at the repo root.
 5. Identify your surface as: "Claude iOS app".
 
-Then create a file `results/raw/session-report.md` containing all of the above plus the UTC date/time, and commit it with message: `test: session report from claude-ios on <branch-name>`
+Then create a file `results/raw/session-report.md` containing all of the above plus the UTC date/time, and commit it with message: `test: session report from claude-ios on {{BRANCH_NAME}}`
 ```
 
 ## Diagnostic: symlink resolution test

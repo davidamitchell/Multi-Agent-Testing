@@ -126,6 +126,8 @@ echo "==> Creating config/symlink-agents-md"
 git checkout -b config/symlink-agents-md main
 mkdir -p .github
 sentinel_content ".github/copilot-instructions.md" "config/symlink-agents-md" > .github/copilot-instructions.md
+# Symlink target is relative to the location of the symlink (repo root).
+# When checked out, AGENTS.md -> .github/copilot-instructions.md resolves correctly.
 ln -sf .github/copilot-instructions.md AGENTS.md
 git add .github/copilot-instructions.md AGENTS.md
 git commit -m "config/symlink-agents-md: canonical file + AGENTS.md symlink"
@@ -139,6 +141,8 @@ echo "==> Creating config/symlink-claude-md"
 git checkout -b config/symlink-claude-md main
 mkdir -p .github
 sentinel_content ".github/copilot-instructions.md" "config/symlink-claude-md" > .github/copilot-instructions.md
+# Symlink target is relative to the location of the symlink (repo root).
+# When checked out, CLAUDE.md -> .github/copilot-instructions.md resolves correctly.
 ln -sf .github/copilot-instructions.md CLAUDE.md
 git add .github/copilot-instructions.md CLAUDE.md
 git commit -m "config/symlink-claude-md: canonical file + CLAUDE.md symlink"
