@@ -1,4 +1,3 @@
-````markdown
 # Test Prompts
 
 Use these prompts to test each branch on each surface. Run one surface at a time. Record results in `RESULTS.md` and paste raw session output into `results/raw/YYYY-MM-DD-<surface>-<branch>.md`.
@@ -125,4 +124,3 @@ Report:
 - Or did you see the literal text "@import .github/copilot-instructions.md"?
 - State which one happened, exactly.
 ```
-````
