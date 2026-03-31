@@ -57,7 +57,7 @@ Do not proceed to the task until you have stated all five items above.
 
 After completing the five-item report above, perform this task:
 
-Create a file called \`results/raw/session-report.md\` in the repository. The file must contain:
+Create a file called \`results/raw/session-report-<surface>-<branch>.md\` in the repository (where \`<surface>\` is the surface identifier you stated in item 5, lowercase with hyphens, e.g. \`copilot-coding-agent\`, and \`<branch>\` is the BRANCH value above with \`/\` replaced by \`-\`). The file must contain:
 
 - The date and time (UTC)
 - The surface you identified in item 5
