@@ -38,7 +38,7 @@ This repository is a test harness for empirically observing how different agent 
 | Copilot Spaces | Open repo in a Copilot Space | Which files are auto-loaded? Prior research suggests Spaces is a chat tool that launches coding agents rather than loading instructions itself — test to confirm |
 | Copilot issues | "Ask Copilot" on an issue | Which instruction files are visible? |
 | Claude iOS app (`code` feature) | Open repo in Claude iOS app `code` feature | Does it load `CLAUDE.md`? Does `@import` work? Does it resolve symlinks? |
-| Claude issues integration | Claude issues surface if available | Same as above — requires `ANTHROPIC_API_KEY` + GitHub App credentials; skip if not configured |
+| Claude issues integration | Claude issues surface if available | Same as above — requires the Claude GitHub App to be installed on this repo |
 | Claude agent tasks | Claude agent task surface if available | Same as above |
 
 ---

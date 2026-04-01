@@ -153,7 +153,7 @@ Create `results/raw/session-report-claude-ios-{{BRANCH_NAME}}.md` (replacing `/`
 
 ## Surface: Claude issues integration
 
-> **Prerequisites:** This surface requires `ANTHROPIC_API_KEY` and GitHub App credentials (`APP_ID`, `APP_PRIVATE_KEY`). Skip if those are not configured in the repo.
+> **Prerequisites:** This surface requires the Claude GitHub App to be installed on this repo. Skip if it is not.
 
 Trigger the Claude issues integration on this repo. Create a GitHub issue (or comment on an existing one) with the following body, ensuring the integration is operating on branch `{{BRANCH_NAME}}`:
 
