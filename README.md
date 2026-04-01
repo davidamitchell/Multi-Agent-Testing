@@ -9,6 +9,7 @@ This repository is a test harness for empirically observing how different agent 
 - Whether `CLAUDE.md` supports `@import` directives that Claude Code on the web follows
 - Whether the `.github/skills/` git submodule is accessible or appears as an empty directory
 - Whether any pre-session environment setup mechanism is available per surface
+- Whether Copilot reads `AGENTS.md` and `.github/copilot-instructions.md` additively or gives one precedence (prior research indicates additive loading; `AGENTS.md` is a Linux Foundation-stewarded cross-vendor standard adopted by 60,000+ repositories)
 
 ---
 
@@ -20,7 +21,7 @@ This repository is a test harness for empirically observing how different agent 
 | `config/copilot-only` | Only `.github/copilot-instructions.md` present |
 | `config/agents-md-only` | Only `AGENTS.md` at repo root present |
 | `config/claude-md-only` | Only `CLAUDE.md` at repo root present |
-| `config/all-three-full-content` | All three files present with identical sentinel content |
+| `config/all-three-full-content` | All three files present with identical sentinel content — Copilot surfaces may load the sentinel twice (additive loading of `AGENTS.md` + `copilot-instructions.md`) |
 | `config/symlink-agents-md` | `AGENTS.md` is a git symlink → `.github/copilot-instructions.md` |
 | `config/symlink-claude-md` | `CLAUDE.md` is a git symlink → `.github/copilot-instructions.md` |
 | `config/claude-md-import` | `CLAUDE.md` contains only `@import .github/copilot-instructions.md` |
@@ -34,10 +35,10 @@ This repository is a test harness for empirically observing how different agent 
 |---------|-----------|---------------|
 | Copilot coding agent (GitHub issue) | Assign issue to Copilot | Does it load `.github/copilot-instructions.md`? Does it initialise the submodule? |
 | Copilot CLI (Actions workflow) | `copilot -p <prompt> --autopilot --allow-all` in CI | Same as above; does CLI behave differently from the coding agent? |
-| Copilot Spaces | Open repo in a Copilot Space | Which files are auto-loaded? |
+| Copilot Spaces | Open repo in a Copilot Space | Which files are auto-loaded? Prior research suggests Spaces is a chat tool that launches coding agents rather than loading instructions itself — test to confirm |
 | Copilot issues | "Ask Copilot" on an issue | Which instruction files are visible? |
 | Claude iOS app (`code` feature) | Open repo in Claude iOS app `code` feature | Does it load `CLAUDE.md`? Does `@import` work? Does it resolve symlinks? |
-| Claude issues integration | Claude issues surface if available | Same as above |
+| Claude issues integration | Claude issues surface if available | Same as above — requires `ANTHROPIC_API_KEY` + GitHub App credentials; skip if not configured |
 | Claude agent tasks | Claude agent task surface if available | Same as above |
 
 ---

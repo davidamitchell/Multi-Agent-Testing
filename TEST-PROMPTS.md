@@ -17,6 +17,8 @@ Use these prompts to test each branch on each surface. Run one surface at a time
 5. Record what the agent reports in `RESULTS.md`.
 6. Paste the full raw session output into `results/raw/`.
 
+> **`config/all-three-full-content` on Copilot surfaces:** prior research indicates Copilot reads `AGENTS.md` and `.github/copilot-instructions.md` additively, so the sentinel may appear twice in the agent's loaded context. Record whether the agent reports one file, both files, or the sentinel content only once despite loading both.
+
 ---
 
 ## Surface: Copilot coding agent (GitHub issue)
@@ -107,6 +109,8 @@ Trigger via Actions tab → "Test Copilot CLI Surface" → Run workflow → ente
 
 ## Surface: Copilot Spaces
 
+> **Note:** Prior research characterises Copilot Spaces as a chat tool that launches coding agents rather than an independent instruction-loading surface. Record whether the Space itself reports the sentinel, or whether it delegates to a spawned coding agent that does.
+
 Open this repo in a Copilot Space on branch `{{BRANCH_NAME}}`. Send the following message:
 
 ```
@@ -148,6 +152,8 @@ Create `results/raw/session-report-claude-ios-{{BRANCH_NAME}}.md` (replacing `/`
 ---
 
 ## Surface: Claude issues integration
+
+> **Prerequisites:** This surface requires `ANTHROPIC_API_KEY` and GitHub App credentials (`APP_ID`, `APP_PRIVATE_KEY`). Skip if those are not configured in the repo.
 
 Trigger the Claude issues integration on this repo. Create a GitHub issue (or comment on an existing one) with the following body, ensuring the integration is operating on branch `{{BRANCH_NAME}}`:
 
